@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CLICKER TOP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brocolicker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-	<h1>la partie va commencer!</h1>
+<body class="game-page">
+    <header class="top-bar">
+        <div class="top-left-spacer"></div>
+        <h1 aria-label="Brocolicker">
+            <span>B</span><span>R</span><span>O</span><span>C</span><span>O</span><span>C</span><span>L</span><span>I</span><span>C</span><span>K</span><span>E</span><span>!</span>
+        </h1>
+        <a href="index.html" class="start-btn return-btn">RETOUR</a>
+    </header>
+
+    <div class="score-box">BROCOLIS : <span id="score-count">0</span></div>
+
+    <div class="play-layout">
+        <div class="play-area">
+            <button id="broccoli-button" class="broccoli-button" type="button" data-skin="classic" aria-label="Cliquer pour gagner des brocolis">
+                <span class="broccoli-visual" aria-hidden="true">
+                    <span class="broccoli-shadow"></span>
+                    <span class="broccoli-art"></span>
+                    <span class="broccoli-leaf leaf-1"></span>
+                    <span class="broccoli-leaf leaf-2"></span>
+                    <span class="broccoli-leaf leaf-3"></span>
+                    <span class="broccoli-leaf leaf-4"></span>
+                </span>
+            </button>
+        </div>
+
+        <aside class="side-panel">
+            <button id="shop-toggle" class="shop-toggle" type="button" aria-expanded="false">BOUTIQUE</button>
+
+            <div id="shop-panel" class="shop-panel hidden">
+                <button class="skin-btn is-active" data-skin="classic" data-price="0" type="button">CLASSIC</button>
+                <button class="skin-btn" data-skin="rainbow" data-price="40" type="button">ARC-EN-CIEL</button>
+                <button class="skin-btn" data-skin="royal" data-price="90" type="button">ROYAL</button>
+                <button class="skin-btn" data-skin="sleepy" data-price="150" type="button">DODO</button>
+            </div>
+
+            <div class="upgrade-panel">
+                <button class="upgrade-btn" data-upgrade="auto" type="button">
+                    <span class="upgrade-name">+1 click /s</span>
+                    <span class="upgrade-cost">15</span>
+                </button>
+                <button class="upgrade-btn" data-upgrade="click" type="button">
+                    <span class="upgrade-name">+1 click /click</span>
+                    <span class="upgrade-cost">20</span>
+                </button>
+            </div>
+        </aside>
+    </div>
+
+    <div class="quest-strip">
+        <span id="quest-text">Quête : clique 10 brocolis</span>
+    </div>
+
+    <div class="stats-panel" aria-live="polite">
+        <div class="stat-item"><span>CPS</span><strong id="cps-stat">0</strong></div>
+        <div class="stat-item"><span>CPC</span><strong id="cpc-stat">1</strong></div>
+    </div>
+
+    <div id="floating-text-layer" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
